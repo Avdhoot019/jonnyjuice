@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jonny Juice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Jonny Juice</h1>
+    <p>Fresh. Natural. Tasty.</p>
+  </header>
+
+  <section class="menu">
+    <h2>Select Your Flavor</h2>
+    <div class="grid">
+      <div class="card" onclick="showInfo('mango')">
+        <img src="website_juice_v001.jpg" alt="Mango Juice">
+        <p>Mango</p>
+      </div>
+      <div class="card" onclick="showInfo('watermelon')">
+        <img src="website_juice_v002.jpg" alt="Watermelon Juice">
+        <p>Watermelon</p>
+      </div>
+      <div class="card" onclick="showInfo('applepine')">
+        <img src="website_juice_v003.jpg" alt="Apple Pineapple Juice">
+        <p>Apple & Pineapple</p>
+      </div>
+      <div class="card" onclick="showInfo('blueberry')">
+        <img src="website_juice_v004.jpg" alt="Blueberry Juice">
+        <p>Blueberry</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="info" class="info-section hidden">
+    <h2 id="info-title">Juice Info</h2>
+    <p id="info-text">Click a juice to learn more!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Jonny Juice. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const info = {
+      mango: {
+        title: "🥭 Mango Magic",
+        text: "Mango juice is packed with vitamin A, C, and E. It helps boost immunity, improves eye health, supports digestion, and promotes healthy skin. Mangoes also contain enzymes that help break down protein, and they’re great for reducing acidity and balancing the gut."
+      },
+      watermelon: {
+        title: "🍉 Watermelon Wave",
+        text: "Watermelon juice is super hydrating and contains lycopene, which supports heart health. It's low in calories, rich in antioxidants, helps reduce muscle soreness, and keeps your body cool. It also supports kidney function and reduces inflammation naturally."
+      },
+      applepine: {
+        title: "🍏🍍 Apple & Pineapple Fusion",
+        text: "This combo is rich in dietary fiber, Vitamin C, and bromelain (from pineapple), which aids digestion and reduces inflammation. Apple improves heart and brain health, while pineapple boosts metabolism and strengthens bones with its manganese content."
+      },
+      blueberry: {
+        title: "🫐 Blueberry Bliss",
+        text: "Blueberry juice is a super antioxidant drink. It supports brain health, enhances memory, reduces DNA damage, and promotes heart and skin health. It’s anti-aging, improves insulin response, and protects against urinary tract infections."
+      }
+    };
+
+    function showInfo(flavor) {
+      const section = document.getElementById('info');
+      document.getElementById('info-title').innerText = info[flavor].title;
+      document.getElementById('info-text').innerText = info[flavor].text;
+      section.classList.remove('hidden');
+      section.classList.add('fade-in');
+    }
+  </script>
+</body>
+</html>
